@@ -9,8 +9,10 @@ import javax.persistence.Query;
 
 import org.springframework.stereotype.Repository;
 import com.chathu.petHealth.petHealth.model.Owner;
+import org.springframework.transaction.annotation.Transactional;
 
 @Repository("ownerRepository")
+@Transactional
 public class OwnerRepositoryImpl implements OwnerRepository{
 	
 	@PersistenceContext

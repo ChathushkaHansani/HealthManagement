@@ -28,6 +28,8 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @EnableTransactionManagement
 @PropertySource("classpath:application.properties")
 public class Config {
+
+
     private static final String HIBERNATE_DIALECT_KEY = "hibernate.dialect";
 
     private static final String HIBERNATE_FORMAT_SQL_KEY = "hibernate.format_sql";
