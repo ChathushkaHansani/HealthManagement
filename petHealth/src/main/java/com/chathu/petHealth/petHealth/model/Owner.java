@@ -1,26 +1,52 @@
 package com.chathu.petHealth.petHealth.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name="OWNER")
 public class Owner {
+
+
+	@OneToMany(fetch = FetchType.EAGER, cascade = {CascadeType.ALL}, mappedBy = "owner")
+	private List<Pet> petData = new ArrayList<Pet>();
+
+	public List<Pet> getPetData() {
+		return petData;
+	}
+
+	public void setPetData(List<Pet> petData) {
+		this.petData = petData;
+	}
+
 	
 	@Id
 	@GeneratedValue
-	@Column(name="ownerId")
+	@Column(name="id")
 	private Long id;
 	
 	@Column(name="ownerName")
 	private String ownerName;
 
+	@Column(name="ownerCity")
 	private String ownerCity;
+
+	@Column(name="ownerMobile")
 	private String ownerMobile;
-	
+
+
+
+/*
+	public List<Pet> getPetData() {
+		return petData;
+	}
+
+	public void setPetData(List<Pet> petData) {
+		this.petData = petData;
+	}
+*/
+
 	
 	public String getOwnerName() {
 		return ownerName;

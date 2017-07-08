@@ -7,4 +7,6 @@ import com.chathu.petHealth.petHealth.model.Owner;
 public interface OwnerService {
 	Owner save(Owner owner);
 
+	/*public List<Owner> getPetsById(String id);*/
+
 }

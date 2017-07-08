@@ -36,6 +36,8 @@ public class Config {
 
     private static final String PROP_KEY_DB_DRIVER = "db.driver";
 
+    private static final String DB_HB2DLL_CONFIG = "hibernate.hbm2ddl.auto";
+
     private static final String PROP_KEY_DB_URL = "db.url";
 
     private static final String PROP_KEY_DB_USERNAME = "db.username";
@@ -78,6 +80,7 @@ public class Config {
         Properties properties = new Properties();
         properties.setProperty(HIBERNATE_DIALECT_KEY, env.getRequiredProperty(PROP_KEY_HIBERNATE_DIALECT));
         properties.setProperty(HIBERNATE_FORMAT_SQL_KEY, env.getRequiredProperty(PROP_KEY_HIBERNATE_FORMAT_SQL));
+        properties.setProperty(DB_HB2DLL_CONFIG, env.getRequiredProperty(DB_HB2DLL_CONFIG));
         return properties;
     }
 

@@ -19,6 +19,7 @@ public class OwnerRepositoryImpl implements OwnerRepository{
 	EntityManager entityManager;
 
 	public Owner save(Owner owner) {
+		System.out.println(owner.getId() + owner.getOwnerName());
 		
 		if(owner.getId()==null){
 			entityManager.persist(owner);
@@ -26,7 +27,6 @@ public class OwnerRepositoryImpl implements OwnerRepository{
 			owner = entityManager.merge(owner);
 		}
 		entityManager.flush();
-		
 		return owner;
 	}
 

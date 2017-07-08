@@ -15,7 +15,6 @@ public class ownerServiceImpl implements OwnerService {
 	OwnerRepository ownerRepository;
 
 	public Owner save(Owner owner) {
-
 		return ownerRepository.save(owner);
 	}
 
