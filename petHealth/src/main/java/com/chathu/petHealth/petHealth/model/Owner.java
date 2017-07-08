@@ -9,16 +9,6 @@ import java.util.List;
 public class Owner {
 
 
-	@OneToMany(fetch = FetchType.EAGER, cascade = {CascadeType.ALL}, mappedBy = "owner")
-	private List<Pet> petData = new ArrayList<Pet>();
-
-	public List<Pet> getPetData() {
-		return petData;
-	}
-
-	public void setPetData(List<Pet> petData) {
-		this.petData = petData;
-	}
 
 	
 	@Id
@@ -35,6 +25,21 @@ public class Owner {
 	@Column(name="ownerMobile")
 	private String ownerMobile;
 
+	@OneToMany(fetch = FetchType.EAGER, cascade = {CascadeType.ALL}, mappedBy = "id")
+	private List<Pet> petData = new ArrayList<Pet>();
+
+	public List<Pet> getPetData() {
+		return petData;
+	}
+
+
+	public void setPetData(List<Pet> petData) {
+		for(Pet pet:petData){
+			pet.setOwner(this);
+		}
+
+		this.petData = petData;
+	}
 
 
 /*

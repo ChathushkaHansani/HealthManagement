@@ -21,19 +21,27 @@ public class Pet {
     public void setOwner(Owner owner) {
         this.owner = owner;
     }
-
+/*
     public int getPetId() {
         return petId;
     }
 
     public void setPetId(int petId) {
         this.petId = petId;
+    }*/
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     @Id
     @GeneratedValue
-    @Column(name="petId")
-    private int petId;
+    @Column(name="id")
+    private int id;
 
     @Column(name="petName")
     private String name;
