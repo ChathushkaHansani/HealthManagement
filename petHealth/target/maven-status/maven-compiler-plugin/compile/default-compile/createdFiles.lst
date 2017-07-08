@@ -1,8 +1,0 @@
-com\chathu\petHealth\petHealth\config\Config.class
-com\chathu\petHealth\petHealth\controller\OwnerController.class
-com\chathu\petHealth\petHealth\model\Owner.class
-com\chathu\petHealth\petHealth\repository\OwnerRepositoryImpl.class
-com\chathu\petHealth\petHealth\Application.class
-com\chathu\petHealth\petHealth\repository\OwnerRepository.class
-com\chathu\petHealth\petHealth\service\OwnerService.class
-com\chathu\petHealth\petHealth\service\ownerServiceImpl.class
