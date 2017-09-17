@@ -7,8 +7,10 @@ import org.springframework.stereotype.Service;
 
 import com.chathu.petHealth.petHealth.model.Owner;
 import com.chathu.petHealth.petHealth.repository.OwnerRepository;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service("ownerService")
+@Transactional
 public class ownerServiceImpl implements OwnerService {
 
 	@Autowired
@@ -18,6 +20,8 @@ public class ownerServiceImpl implements OwnerService {
 		return ownerRepository.save(owner);
 	}
 
-
+	public List<Owner> viewAll(){
+		return  ownerRepository.viewAll();
+	}
 
 }

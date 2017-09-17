@@ -7,5 +7,5 @@ import com.chathu.petHealth.petHealth.model.Owner;
 public interface OwnerRepository {
 	Owner save(Owner owner);
 	
-
+	List<Owner> viewAll();
 }

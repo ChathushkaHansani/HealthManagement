@@ -12,7 +12,6 @@ import com.chathu.petHealth.petHealth.model.Owner;
 import org.springframework.transaction.annotation.Transactional;
 
 @Repository("ownerRepository")
-@Transactional
 public class OwnerRepositoryImpl implements OwnerRepository{
 	
 	@PersistenceContext
@@ -30,6 +29,15 @@ public class OwnerRepositoryImpl implements OwnerRepository{
 		return owner;
 	}
 
+	public List<Owner> viewAll(){
+		Query query= entityManager.createQuery("select e from Owner e");
+		List<Owner> owners= query.getResultList();
+
+		/*for(Owner owner: owners){
+			System.out.println(owner);
+		}*/
+		return owners;
+	}
 
 
 }

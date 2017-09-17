@@ -1,5 +1,6 @@
 package com.chathu.petHealth.petHealth.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
@@ -9,9 +10,11 @@ import javax.persistence.*;
  */
 @Entity
 @Table(name="PET")
+
 public class Pet {
 
     @ManyToOne
+    @JsonIgnore
     private Owner owner;
 
     public Owner getOwner() {
@@ -39,7 +42,7 @@ public class Pet {
     }
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="id")
     private int id;
 

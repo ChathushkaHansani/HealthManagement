@@ -1,18 +1,19 @@
 package com.chathu.petHealth.petHealth.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.springframework.web.bind.annotation.CrossOrigin;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
 @Entity
 @Table(name="OWNER")
+
 public class Owner {
-
-
-
 	
 	@Id
-	@GeneratedValue
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="id")
 	private Long id;
 	
@@ -41,8 +42,13 @@ public class Owner {
 		this.petData = petData;
 	}
 
+	public String toString(){
 
-/*
+		/*return "{\"name\":" + getOwnerName() + ",\"mobile\":" + getOwnerCity() + ",\"City\":" + getOwnerMobile() + "}";*/
+		return getOwnerName() +  getOwnerCity()  + getOwnerMobile();
+}
+
+	/*
 	public List<Pet> getPetData() {
 		return petData;
 	}
